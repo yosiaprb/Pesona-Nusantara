@@ -1,0 +1,333 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {   
+    background-color: aliceblue;
+}
+
+.navbar {
+    background-color: #21355585;
+}
+
+.navbar-brand {
+    font-size: 32px;
+}
+
+.section-container {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    height: 100vh;
+    background-image: linear-gradient(
+        rgba(45, 92, 132, 0.5),
+        rgba(45, 92, 132, 0.5)
+    ),
+    url("../img/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header .section-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: #fff;
+}
+  
+.header-content h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 3rem;
+    text-align: center;
+}
+  
+.header-content p {
+    text-align: center;
+}
+  
+.header-content .btn {
+    --bs-btn-font-size: 16px;
+    --bs-btn-bg: #213555;
+    --bs-btn-hover-bg: aliceblue;
+    --bs-btn-border-color: #213555;
+    --bs-btn-color: aliceblue;
+    --bs-btn-hover-color: #213555;
+    --bs-btn-hover-border-color: #213555;
+    --bs-btn-active-color: aliceblue;
+    --bs-btn-active-bg: #213555;
+    --bs-btn-active-border-color: #213555;
+    --bs-btn-padding-x: 3rem;
+}
+  
+.header-content .btn-outline-light {
+    --bs-btn-padding-x: 3rem;
+}
+  
+@media (min-width: 640px) {
+    header .section-container {
+        justify-content: flex-start;
+    }
+    
+    .header-content {
+        max-width: 600px;
+        align-items: flex-start;
+    }
+    
+    .header-content p {
+        text-align: left;
+    }
+
+    .header-content h1 {
+        text-align: left;
+        font-size: 4rem;
+        line-height: 4rem;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 786px) {
+    .section-container {
+        justify-content: flex-end;
+    }
+}
+
+#budaya {
+    padding-top: 5rem;
+}
+
+#budaya h4 {
+    text-align: center;
+}
+
+#budaya .butt {
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+#gallery h2 {
+    text-align: center; 
+    padding-top: 5rem;
+}
+
+#destinasi h2 {
+    text-align: center; 
+    padding-top: 5rem;
+}
+
+#destinasi .container {
+    max-width: 1200px;
+    width: 95%;
+}
+
+#input-data h2 {
+    text-align: center; 
+    padding-top: 5rem;
+}
+  
+.slider-wrapper {
+    position: relative;
+}
+  
+.slider-wrapper .slide-button {
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    color: aliceblue;
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: #213555;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+  
+.slider-wrapper .slide-button:hover {
+    background: #2135557f;
+    color: #213555;
+}
+  
+.slider-wrapper .slide-button#prev-slide {
+    left: -25px;
+    display: none;
+}
+  
+.slider-wrapper .slide-button#next-slide {
+    right: -25px;
+}
+  
+.slider-wrapper .image-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 18px;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+  
+.slider-wrapper .image-list::-webkit-scrollbar {
+    display: none;
+}
+  
+.slider-wrapper .image-list .image-item {
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+}
+  
+.container .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+  
+.slider-scrollbar .scrollbar-track {
+    background: #ccc;
+    width: 100%;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+}
+  
+.slider-scrollbar:hover .scrollbar-track {
+    height: 4px;
+}
+  
+.slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    background: #000;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+}
+  
+.slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+  
+.slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+@media only screen and (max-width: 1023px) {
+    .slider-wrapper .slide-button {
+        display: none !important;
+    }
+  
+    .slider-wrapper .image-list {
+        gap: 10px;
+        margin-bottom: 15px;
+        scroll-snap-type: x mandatory;
+    }
+  
+    .slider-wrapper .image-list .image-item {
+        width: 280px;
+        height: 380px;
+    }
+  
+    .slider-scrollbar .scrollbar-thumb {
+        width: 20%;
+    }
+}
+
+.btn-outline-primary {
+    --bs-btn-font-size: 16px;
+    --bs-btn-bg: #213555;
+    --bs-btn-hover-bg: aliceblue;
+    --bs-btn-border-color: #213555;
+    --bs-btn-color: aliceblue;
+    --bs-btn-hover-color: #213555;
+    --bs-btn-hover-border-color: #213555;
+    --bs-btn-active-color: aliceblue;
+    --bs-btn-active-bg: #213555;
+    --bs-btn-active-border-color: #213555;
+    --bs-btn-padding-x: 3rem;
+}
+
+.btn-outline-light {
+    --bs-btn-padding-x: 3rem;
+}
+
+.card-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        overflow-x: auto;
+        display: flex;
+    }
+}
+
+footer {
+    background-color:#213555;
+    text-align: center;
+    padding: 1rem 0 2rem;
+    margin-top: 3rem;
+}
+
+footer .socials {
+    padding: 1rem 0;
+}
+
+footer .socials a {
+   color: aliceblue;
+   margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+   color: lightblue; 
+}
+
+footer .links {
+    margin-bottom: 1.2rem;
+}
+
+footer .links a {
+    color: aliceblue;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+}
+
+footer .credit {
+    font-size: 0.8rem;
+    color: aliceblue;
+}
